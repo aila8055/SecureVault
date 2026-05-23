@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SecureVault</title>
+
+    <link 
+        rel="stylesheet" 
+        href="SecureVault.css"
+    >
+
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Header Section -->
+        <div class="header">
+
+            <h1>SecureVault</h1>
+
+            <p>Create a secure password</p>
+
+        </div>
+
+        <!-- Password Input Section -->
+        <div class="input-section">
+
+            <input 
+                type="password"
+                id="passwordInput"
+                placeholder="Enter your password"
+            >
+
+            <button id="togglePassword">
+                👁
+            </button>
+
+        </div>
+
+        <!-- Strength Section -->
+        <div class="strength-section">
+
+            <p>Password Strength:</p>
+
+            <!-- Strength Text -->
+            <div 
+                id="strengthText" 
+                class="strength-text"
+            >
+                Weak
+            </div>
+
+            <!-- Strength Bar -->
+            <div class="bar-container">
+
+                <div 
+                    id="strengthBar" 
+                    class="strength-bar"
+                >
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="feedback-section">
+
+            <!-- Weakness feedback -->
+            <p id="weaknessFeedback">
+                ⚠️ Weaknesses will appear here...
+            </p>
+
+            <!-- Crack time -->
+            <p id="crackTime">
+                ⏱️ Crack time will appear here...
+            </p>
+
+            <!-- Attack method -->
+            <p id="attackMethod">
+                🎯 Attack method will appear here...
+            </p>
+
+        </div>
+
+        <!-- Encryption Section -->
+        <div class="encryption-section">
+
+            <h2>🔒 Password Tools</h2>
+
+            <!-- Encryption Dropdown -->
+            <select id="encryptionMethod">
+
+                <option value="AILA">
+                    🔑 AILA's_logic!(Default)
+                </option>
+
+                <option value="sha256">
+                    SHA-256 Hash
+                </option>
+
+                <option value="base64">
+                    Base64 Encoding
+                </option>
+
+                <option value="md5">
+                    MD5 Hash
+                </option>
+                
+            </select>
+
+            <button id="encryptBtn">
+                🔑 Generate / Encrypt
+            </button>
+
+            <!-- Output Box -->
+            <div class="output-box">
+
+                <p id="encryptionOutput"></p>
+
+                <button id="copyBtn">
+                    📋 Copy
+                </button>
+
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+    <script src="SecureVault.js"></script>
+
+</body>
+
+</html>
+
+
