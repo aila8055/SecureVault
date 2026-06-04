@@ -310,4 +310,3 @@ async function sha256(text){
 
     return hashHex
 }
-```
