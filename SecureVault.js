@@ -310,3 +310,156 @@ async function sha256(text){
 
     return hashHex
 }
+
+
+let encryptBtn=
+    document.getElementById("encryptBtn")
+
+encryptBtn.addEventListener("click",async function(){
+
+    let password=input.value
+
+    if(password===""){
+
+        document.getElementById(
+            "encryptionOutput"
+        ).innerText=
+        "Please enter a password first!"
+
+        return
+    }
+
+    let method=
+        document.getElementById(
+            "encryptionMethod"
+        ).value
+
+    let output=""
+
+    if(method==="AILA"){
+
+        let derived=
+            await AILA(password)
+
+        output=derived
+    }
+
+    else if(method==="sha256"){
+
+        output=
+            await sha256(password)
+    }
+
+    else if(method==="base64"){
+
+        output=btoa(password)
+    }
+
+    else if(method==="md5"){
+
+        output=
+        "MD5 is insecure! Use SHA-256 instead."
+    }
+
+    document.getElementById(
+        "encryptionOutput"
+    ).innerText=output
+})
+
+
+let copyBtn=
+    document.getElementById("copyBtn")
+
+copyBtn.addEventListener("click",function(){
+
+    let outputText=
+        document.getElementById(
+            "encryptionOutput"
+        ).innerText
+
+    if(outputText===""){
+
+        alert("Nothing to copy!")
+        return
+    }
+
+    navigator.clipboard.writeText(outputText)
+
+    copyBtn.innerText="Copied!"
+
+    setTimeout(function(){
+
+        copyBtn.innerText="Copy"
+
+    },2000)
+})
+//AILA's logic
+async function AILA(input){
+
+    let hash=
+        await sha256(input)
+
+    let upper=
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+    let lower=
+        "abcdefghijklmnopqrstuvwxyz"
+
+    let numbers=
+        "0123456789"
+
+    let special=
+        "!@#$%^&*"
+
+    let derived=""
+    let pos=0
+
+    for(let round=0;round<4;round++){
+
+        let h1=
+            parseInt(
+                hash.substring(pos,pos+2),
+                16
+            )
+
+        derived+=
+            upper[h1%upper.length]
+
+        pos+=2
+
+        let h2=
+            parseInt(
+                hash.substring(pos,pos+2),
+                16
+            )
+
+        derived+=
+            lower[h2%lower.length]
+
+        pos+=2
+
+        let h3=
+            parseInt(
+                hash.substring(pos,pos+2),
+                16
+            )
+
+        derived+=
+            numbers[h3%numbers.length]
+
+        pos+=2
+
+        let h4=
+            parseInt(
+                hash.substring(pos,pos+2),
+                16
+            )
+
+        derived+=
+            special[h4%special.length]
+
+        pos+=2
+    }
+
+    return derived
+}
