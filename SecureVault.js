@@ -169,7 +169,7 @@ function estimateCrackTime(password){
 
     if(seconds<1){
 
-        return"⚡ Less than 1 second — INSTANT CRACK!"
+        return" Less than 1 second — INSTANT CRACK!"
     }
 
     else if(seconds<60){
