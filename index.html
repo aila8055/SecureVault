@@ -12,15 +12,15 @@
 </head>
 
 <body>
-#Main container
+<!-- Main container -->
     <div class="container">
-        #Header Section
+        <!-- Header Section -->
         <div class="header">
         <h1>SecureVault</h1>
         <p>Create a secure password</p>
         </div>
 
-        #Password Input Section
+        <!-- Password Input Section -->
         <div class="input-section">
             <input 
                 type="password"
@@ -31,17 +31,17 @@
             </button>
         </div>
         
-        #Strength Section
+        <!-- Strength Section -->
         <div class="strength-section">
         <p>Password Strength:</p>
-        #Strength Text
+        <!-- Strength Text -->
             <div 
                 id="strengthText" 
                 class="strength-text">
                 Weak
             </div>
 
-            #strength Bar
+            <!-- Strength Bar -->
             <div class="bar-container">
                 <div 
                     id="strengthBar" 
@@ -49,30 +49,31 @@
                 </div>
             </div>
         </div>
-        #Feedback Section
+
+        <!-- Feedback Section -->
         <div class="feedback-section">
-            #Weakness feedback
+            <!-- Weakness feedback -->
             <p id="weaknessFeedback">
                  ->Weaknesses will appear here...
             </p>
 
-            #Crack time
+            <!-- Crack time -->
             <p id="crackTime">
                  ->Crack time will appear here...
             </p>
 
-            #Attack method
+            <!-- Attack method -->
             <p id="attackMethod">
                  ->Attack method will appear here...
             </p>
 
         </div>
 
-        #Encryption Section
+        <!-- Encryption Section -->
         <div class="encryption-section">
-        <h2>  Password Tools</h2>
+        <h2> Password Tools</h2>
 
-            #Encryption Dropdown
+            <!-- Encryption Dropdown -->
             <select id="encryptionMethod">
 
                 <option value="AILA">
@@ -97,7 +98,7 @@
                  Generate / Encrypt
             </button>
 
-            #Output Box
+            <!-- Output Box -->
             <div class="output-box">
 
                 <p id="encryptionOutput"></p>
@@ -110,8 +111,6 @@
 
         </div>
 
-        
-
     </div>
 
     <script src="SecureVault.js"></script>
@@ -119,5 +118,3 @@
 </body>
 
 </html>
-
-
